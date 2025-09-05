@@ -1,5 +1,34 @@
 ---
+import '../styles/global.css';
+import Card from '../components/card.astro';
+import Nav from '../components/nav.astro';
 
+const cards = [{
+		site_name: "Maggie Appleton",
+		src: "https://maggieappleton.com/garden",
+		theme: "anthropology, metaphors, visual explanations, and web development",
+	},
+	{
+		site_name: "Mental Nodes",
+		src: "https://www.mentalnodes.com/",
+		theme: "networked thinking, metacognition, evidence-based learning and self-education",
+	},
+	{
+		site_name: "Andy Matuschak's Notes",
+		src: "https://notes.andymatuschak.org/About_these_notes",
+		theme: "Note-taking, education, tools for thought",
+	},
+	{
+		site_name: "Gwern",
+		src: "https://www.gwern.net/",
+		theme: "Quantified self, spaced repetition, bitcoin"
+	},
+	{
+		site_name: "ACOUP",
+		src: "https://www.acoup.blog/",
+		theme: "Ancient history, military history, popular culture"
+	},
+]
 ---
 
 <html lang="en">
@@ -8,9 +37,18 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>clouded hills</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="dark:bg-black dark:bg-gray-800">
+		<Nav/>
+		<div class="w-full flex">
+			<div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+				{ cards.map(card => (
+					<div class="">
+						<Card site_name={card.site_name} src={card.src} theme={card.theme} />
+					</div> 
+				)) }
+			</div>
+		</div>
 	</body>
 </html>

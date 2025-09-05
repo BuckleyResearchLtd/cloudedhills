@@ -1,0 +1,48 @@
+---
+import Moon from "astro-heroicons/outline/Moon.astro";
+import Sun from "astro-heroicons/outline/Sun.astro";
+---
+<div class="h-24 pt-6 flex flex-col">
+<!-- <div class="h-60 pt-6 flex flex-col"> -->
+  <div class="w-[1168px] mx-auto">
+    <div class="flex">
+      <div class="text-2xl dark:text-stone-300">
+        clouded hills
+      </div>
+      <div id="toggleDarkMode" class="ml-auto mr-8 cursor-pointer h-6 w-6 text-slate-500">
+        <Sun class="hidden dark:block"/>
+        <Moon class="dark:hidden"/>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="ml-0">
+        <a class="text-slate-500 m-8 text-sm hover:underline" href="/">random</a>
+        <a class="text-slate-500 m-8 text-sm hover:underline" href="/alphabetic">alphabetic</a>
+        <a class="text-slate-500 m-8 text-sm hover:underline" href="/featured">featured</a>
+      </div>
+      <div class="ml-auto mr-0">
+        <a class="text-slate-500 m-8 text-sm hover:underline" href="/about">about</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  console.log('toggling theme');
+  document.documentElement.classList.toggle('dark');
+  // Optionally store preference
+  // localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+}
+const button = document.querySelector('#toggleDarkMode');
+button.addEventListener('click', toggleTheme);
+
+// if (
+//   localStorage.theme === 'dark' ||
+//   (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+// ) {
+//   document.documentElement.classList.add('dark');
+// } else {
+//   document.documentElement.classList.remove('dark');
+// }
+</script>
