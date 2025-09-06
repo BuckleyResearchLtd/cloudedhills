@@ -1,0 +1,47 @@
+[
+  {
+    "site_name": "Maggie Appleton",
+    "url": "https://maggieappleton.com/garden",
+    "theme": "anthropology, metaphors, visual explanations, and web development",
+    "screenshot": "/screenshots/maggie-appleton.png",
+    "screenshot_date": "2025-09-06T13:46:30.040Z",
+    "screenshot_dark": "/screenshots/maggie-appleton-dark.png",
+    "featured": 100
+  },
+  {
+    "site_name": "Mental Nodes",
+    "url": "https://www.mentalnodes.com/",
+    "theme": "networked thinking, metacognition, evidence-based learning and self-education",
+    "screenshot": "/screenshots/mental-nodes.png",
+    "screenshot_date": "2025-09-06T13:46:36.593Z",
+    "screenshot_dark": "/screenshots/mental-nodes-dark.png",
+    "featured": 80
+  },
+  {
+    "site_name": "Andy Matuschak's Notes",
+    "url": "https://notes.andymatuschak.org/About_these_notes",
+    "theme": "Note-taking, education, tools for thought",
+    "screenshot": "/screenshots/andy-matuschak-s-notes.png",
+    "screenshot_date": "2025-09-06T13:46:45.816Z",
+    "screenshot_dark": "/screenshots/andy-matuschak-s-notes-dark.png",
+    "featured": 70
+  },
+  {
+    "site_name": "Gwern",
+    "url": "https://www.gwern.net/",
+    "theme": "Quantified self, spaced repetition, bitcoin",
+    "screenshot": "/screenshots/gwern.png",
+    "screenshot_date": "2025-09-06T13:46:54.824Z",
+    "screenshot_dark": "/screenshots/gwern-dark.png",
+    "featured": 70
+  },
+  {
+    "site_name": "ACOUP",
+    "url": "https://www.acoup.blog/",
+    "theme": "Ancient history, military history, popular culture",
+    "screenshot": "/screenshots/acoup.png",
+    "screenshot_date": "2025-09-06T13:47:02.401Z",
+    "screenshot_dark": "/screenshots/acoup-dark.png",
+    "featured": 60
+  }
+]

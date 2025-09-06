@@ -3,8 +3,8 @@ import '../styles/global.css';
 import Layout from '../layouts/layout.astro';
 import websites from '../../websites.json';
 import Cards from '../components/cards.astro';
-const sortedWebsites = websites.sort(() => Math.random() - 0.5);
+const sortedWebsites = websites.sort((a, b) => b.featured - a.featured);
 ---
 <Layout>
-		<Cards websites={sortedWebsites} />
+		<Cards websites={sortedWebsites}/>
 </Layout>

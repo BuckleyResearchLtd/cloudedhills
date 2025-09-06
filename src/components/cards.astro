@@ -1,0 +1,13 @@
+---
+import Card from './card.astro';
+const { websites } = Astro.props;
+---
+<div class="w-full flex">
+  <div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+    { websites.map(card => (
+      <div class="">
+        <Card site_name={card.site_name} url={card.url} screenshot={card.screenshot} theme={card.theme} />
+      </div> 
+    )) }
+  </div>
+</div>

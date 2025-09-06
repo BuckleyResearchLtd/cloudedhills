@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Layout from '../layouts/layout.astro';
 import websites from '../../websites.json';
 import Cards from '../components/cards.astro';
-const sortedWebsites = websites.sort(() => Math.random() - 0.5);
+const sortedWebsites = websites.sort((a, b) => a.site_name.localeCompare(b.site_name));
 ---
 <Layout>
 		<Cards websites={sortedWebsites} />

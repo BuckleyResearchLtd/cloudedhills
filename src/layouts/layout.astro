@@ -1,0 +1,17 @@
+---
+import Nav from '../components/nav.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>clouded hills</title>
+	</head>
+	<body class="dark:bg-black dark:bg-gray-800">
+		<Nav/>
+    <slot/>
+  </body>
+</html>
