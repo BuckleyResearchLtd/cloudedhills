@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+.h-most {
+  height: calc(100dvh - 96px);
+}

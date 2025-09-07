@@ -3,17 +3,15 @@ import Layout from '../layouts/layout.astro';
 import '../styles/global.css';
 ---
 <Layout>
-  <div class="p-4 flex flex-col">
-    <div class="ml-4 flex-col gap-10 text-sm">
-      <div class="text-xl"> welcome to clouded hills </div>
+  <div class="flex">
+    <div class="mx-4 sm:mx-auto p-6 pt-4 sm:max-w-[50%] flex flex-col gap-4 sm:gap-6 bg-stone-100 dark:bg-gray-700 dark:text-stone-100 rounded-md">
+      <div class="text-xl sm:my-2"> welcome to clouded hills </div>
       <p> remember when the web was fun? I do. </p>
       <p> we used to explore the web nonlinearly. we would bounce around, jump back and forth. we would explore. </p>
-    </div>
-    <div class="text-xs text-center mx-8 py-4 border border-stone-200 bg-stone-100 rounded-sm">
-      <div>"wait, no go back. click that link,</div>
-      <div>no not that one, the other one"</div>
-    </div>
-    <div class="ml-4 flex-col gap-10 text-sm">
+      <div class="text-xs sm:text-sm text-center max-w-96 mx-auto px-10 py-4 border border-stone-200 bg-white dark:bg-gray-800 rounded-sm">
+        <div>"wait, no go back. click that link,</div>
+        <div>no not that one, the other one"</div>
+      </div>
       <p> everyone crafted their own path, explored their own way, discovered their own web </p>
       <p> this doesn't happen anymore. we're force fed a slurry of algorithimcally optimised slop.</p>
       <p> but the web can be different. it can be simple. nonlinear, free. </p>
@@ -24,6 +22,7 @@ import '../styles/global.css';
 </Layout>
 <style>
   p {
-    margin: 1rem 0;
+    font-size: var(--text-sm) /* 0.875rem = 14px */;
+    line-height: var(--tw-leading, var(--text-sm--line-height) /* calc(1.25 / 0.875) ≈ 1.4286 */)
   }
 </style>
