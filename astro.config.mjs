@@ -1,12 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
-
 import cloudflare from '@astrojs/cloudflare';
-
 import node from '@astrojs/node';
-
+const isProduction = process.env.NODE_ENV === 'production';
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -17,7 +14,7 @@ export default defineConfig({
     '/random': '/',
   },
 
-  adapter: node({
+  adapter: isProduction ? cloudflare() : node({
     mode: 'standalone',
   }),
 });
