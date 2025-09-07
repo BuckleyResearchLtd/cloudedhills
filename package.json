@@ -10,6 +10,7 @@
     "screenshots": "node scripts/get-screenshot.js"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.7",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.5",
     "astro-heroicons": "^2.1.5-1",
