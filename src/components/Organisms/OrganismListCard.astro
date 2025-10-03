@@ -1,0 +1,60 @@
+---
+import MoleculeListCardRow from "../Molecules/MoleculeListCardRow.astro";
+import OrganismContentType from "./OrganismContentType.astro";
+---
+
+<div class="content-card card-crust">
+	<div>
+		<h3 class="card-header serif"> Recent </h3>
+	</div> 
+	<div class="flex-container">
+		<MoleculeListCardRow class="card-teal" title="On Pessimism and Palestine" description="On radical hope, and how pessimism permits genocide" />
+		<MoleculeListCardRow class="card-lavender" title="On Pessimism and Palestine" description="On radical hope, and how pessimism permits genocide" />
+		<MoleculeListCardRow class="card-rosewater" title="On Pessimism and Palestine" description="On radical hope, and how pessimism permits genocide" />
+	</div>
+</div>
+
+<style>
+.content-card {
+	height: 18rem;
+	width: 24rem;
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	padding: 1rem 1rem;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.card-header {
+	color: var(--base);
+	font-size: x-large;
+	font-weight: 600;
+}
+
+.card-rosewater {
+	background: var(--rosewater);
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.card-yellow { 
+	background: var(--yellow);
+}
+.card-lavender { 
+	background: var(--lavender);
+}
+.card-peach { 
+	background: var(--peach);
+}
+.card-crust { 
+	background: var(--surface2);
+}
+</style>

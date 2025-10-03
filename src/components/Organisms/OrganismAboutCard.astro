@@ -1,0 +1,52 @@
+---
+import MoleculeListCardRow from "../Molecules/MoleculeListCardRow.astro";
+import OrganismContentType from "./OrganismContentType.astro";
+---
+
+<div class="content-card card-teal">
+	<div class="text">
+		<p class="text-intro serif">
+		Clouded Hills is my little corner of the internet. 
+		</p>
+		<p> 
+		<a href="/essays"> Essays </a> are complete. They are the bits I'm proud of, and I hope will stand on their own.
+		</p>
+		<p>
+		<a href="/musings"> Musings </a> are quick pieces of writing. More like a blog, or a long social media post.
+		</p>
+		<p>
+		<a href="/note"> Notes </a> are a gloriously incomplete work in progress. Things I thought worth writing down. 
+		</p> 
+		<p>
+	Start with a <a href="/random">random entry</a> or read more <a href="/about">about the author</a>.
+		</p> 
+	</div> 
+	<div class="flex-container">
+	</div>
+</div>
+
+<style>
+.content-card {
+	height: 18rem;
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	padding: 1rem 1rem;
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.text {
+	color: var(--base);
+	font-size: small;
+}
+
+.text-intro {
+	font-size: large;
+	margin: 0;
+	padding: 0;
+}
+</style>

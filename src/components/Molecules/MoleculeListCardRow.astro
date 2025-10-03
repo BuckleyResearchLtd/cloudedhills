@@ -1,0 +1,81 @@
+---
+import OrganismContentType from "../Organisms/OrganismContentType.astro";
+const { title, description, class: className } = Astro.props;
+---
+
+<div class:list={["card-row", className ]}>
+  <div class="thumbnail-container">
+    <OrganismContentType essay small/>
+  <img class="thumbnail" src="/src/assets/test-image.jpg"/>
+  </div>
+  <div class="card-text">
+    <h4 class="card-row-title serif">{ title }</h4>
+    <p class="card-row-description">{ description } </p>
+  </div>
+</div>
+
+<style>
+
+.thumbnail {
+	height: 4rem;
+	width: 4rem;
+	border-radius: 0;
+}
+
+.thumbnail-container {
+	aspect-ratio: 1 !important;
+	margin: auto 0;
+	height: 4rem;
+	width: 4rem;
+	position: relative;
+}
+
+.card-text {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 1;
+}
+
+.card-row-title {
+	font-size: small;
+	color: var(--base);
+	margin: 0;
+}
+
+.card-row-description {
+	font-size: small;
+	color: var(--base);
+	margin: 0;
+	margin-top: 0.25rem;
+	line-height: 1;
+}
+
+.card-row {
+	display: flex;
+	/* flex-direction: column; */
+	/* width: 80%; */
+	height: 4rem;
+	padding: 0.5rem;
+	gap: 1rem;
+}
+
+.card-rosewater {
+	background: var(--rosewater);
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.card-yellow { 
+	background: var(--yellow);
+}
+.card-lavender { 
+	background: var(--lavender);
+}
+.card-peach { 
+	background: var(--peach);
+}
+.card-crust { 
+	background: 
+</style>

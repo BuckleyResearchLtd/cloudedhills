@@ -1,0 +1,76 @@
+---
+import OrganismContentType from "./OrganismContentType.astro";
+---
+
+<div class="content-card card-rosewater">
+  <div class="h-container">
+    <img class="background-image" src="/src/assets/test-image.jpg" alt="Test image" />
+    <OrganismContentType essay/>
+    <h3 class="card-header serif"> Pessimism </h3>
+    <h3 class="card-header serif"> and Palestine </h3>
+    <div class="card-paragraph">
+      On radical hope, and how pessimism permits genocide.
+    </div>
+  </div>
+</div>
+
+<style>
+
+.card-paragraph {
+	color: white;
+	line-height: 1.5rem;
+	height: 100%;
+	margin-top: 5rem;
+}
+
+.h-container {
+	padding: 4rem 2rem;
+}
+
+.content-card {
+	height: 100%;
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+.card-header {
+	color: var(--base);
+	font-size: x-large;
+	font-weight: 600;
+}
+
+.background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 0 0 0 0;
+
+}
+
+.card-rosewater {
+	background: var(--rosewater);
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.card-yellow { 
+	background: var(--yellow);
+}
+
+h1 {
+	color: var(--teal);
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 200;
+	width: 70%;
+	color: var(--rosewater);
+}
+</style>

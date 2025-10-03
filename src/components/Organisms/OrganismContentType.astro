@@ -1,0 +1,64 @@
+---
+const { essay, note, small } = Astro.props;
+console.log("essay", essay);
+const contentType = essay ? "essay" : "note";
+---
+<div class:list={[
+	{ 
+		"content-type": !small,
+		"content-type-small": small,
+		"essay": essay, 
+		"note": note }]}>
+  <p> { contentType }</p>
+</div>
+
+<style>
+.content-type {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	font-size: small;
+	padding: 0.25rem;
+	color: white;
+	font-weight: 600;
+	border-radius: 0 0 0.5rem 0rem;
+	width: 3rem;
+	height: 1rem;
+	align-items: center;
+	justify-content: center;	
+	.p {
+		margin: 0.25rem;
+		margin-right: 1rem;
+	}
+}
+
+.content-type-small {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	font-size: x-small;
+	padding: 0rem;
+	color: white;
+	font-weight: 600;
+	border-radius: 0 0 0.5rem 0rem;
+	width: 2.25rem;
+	height: 1rem;
+	align-items: center;
+	justify-content: center;	
+	.p {
+		margin: 0.25rem;
+		margin-right: 1rem;
+	}
+}
+
+.essay {
+	background: var(--rosewater);
+}
+
+.note {
+  background: var(--teal);
+}
+
+</style>
