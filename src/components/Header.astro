@@ -7,10 +7,14 @@ const { hideTitle } = Astro.props;
 <header>
 	<nav>
 		<a href="/">
-		<div class="title-logo-container">
-				<img class="logo" src="/clouded-hills.svg" />
-				{!hideTitle && <h2 class="serif">{SITE_TITLE}</h2>}
-			</div>
+			{
+				!hideTitle && (
+					<div class="title-logo-container">
+						<img class="logo" src="/clouded-hills.svg" />
+						<h2 class="serif">{SITE_TITLE}</h2>
+					</div>
+				)
+			}
 		</a>
 		<div class="internal-links">
 			<HeaderLink class="link-item" href="/">home</HeaderLink>
@@ -33,7 +37,7 @@ const { hideTitle } = Astro.props;
 	}
 
 	header {
-		margin: 0;
+		margin: 06;
 		padding: 0 1em;
 		background: var(--mantle);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
