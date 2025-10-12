@@ -45,6 +45,13 @@ body {
 	color: rgb(var(--text));
 	font-size: 20px;
 	line-height: 1.7;
+	min-height: 100%;
+	width: 100%;
+}
+
+html {
+	height: 100%;
+	width: 100%;
 }
 
 .serif {
@@ -57,10 +64,6 @@ body {
 }
 
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
 }
 h1,
 h2,

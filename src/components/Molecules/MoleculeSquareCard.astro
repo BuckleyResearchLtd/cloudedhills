@@ -1,0 +1,75 @@
+---
+const { name, class: className, comingSoon } = Astro.props;
+---
+<a href={comingSoon ? "" : name.toLowerCase()} class="nostyle"> 
+<div class:list={["square-card", className ]}>
+  <p class="serif">
+    {name}
+  </p>
+  <div class:list={["card-overlay", comingSoon ? "coming-soon" : "hidden" ]}>
+    <div class="coming-soon-text">Coming Soon</div>
+  </div>
+</div>
+</a>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+.coming-soon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-items: center;
+  padding: 0.5rem;
+  line-height: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  }
+  .square-card {
+    height: 6rem;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    align-content: center;
+    text-align: center;
+    &:hover {
+      transform: scale(1.05);
+      transform-origin: bottom;
+      transition: transform 0.2s ease;
+    }
+  }
+  
+  p {
+    font-size: medium;
+    margin: 1rem;
+    color: white;
+  }
+  
+  .rosewater {
+    background: var(--rosewater);    
+  }
+  
+  .teal {
+    background: var(--teal);    
+  }
+  .yellow {
+    background: var(--yellow);    
+  }
+  .green {
+    background: var(--green);    
+  }
+
+  a.nostyle,
+a.nostyle:link,
+a.nostyle:visited,
+a.nostyle:hover,
+a.nostyle:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+  cursor: auto;
+}
+</style>

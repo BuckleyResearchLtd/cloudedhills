@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+
+type Props = CollectionEntry<"Essay">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<Header id="top"/>
+		<main>
+				<div class="hero-image">
+					{heroImage && <Image src={heroImage} class="hero-image-img" alt="" />}
+					<div class="date serif">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
+					</div>
+					<div class="title">
+						<h1 class="serif title-text">{title}</h1>
+					</div>
+				</div>
+				<div class="prose">
+					<slot />
+				</div>
+			<div class="back-to-top">
+				<a href="#top"> Back to Top </a>
+			</div>
+			<!-- <Footer /> -->
+		</main>
+	</body>
+</html>
+<style>
+	w-full {
+		padding: 0;
+		width: calc(100% - 4rem);
+		margin 0;
+	}
+
+	main {
+		width: calc(100% - 8rem);
+		padding: 1rem 4rem;
+		display: flex;
+		flex-direction: column;
+	}
+	.hero-image {
+		width: 100%;
+		display: flex;
+		height: 15rem;
+		position: relative;
+		/* background-color: red; */
+	}
+
+	.hero-image-img {
+		margin: 0 auto;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.prose {
+		max-width: 50rem;
+		margin: auto;
+		padding: 1em;
+		color: var(--text);
+		font-size: 1.2rem;
+		/* background: red; */
+	}
+	.title {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+
+		/* padding: 1em 0; */
+		/* text-align: center; */
+		/* line-height: 1; */
+		h1 {
+			color: white;
+			font-size: 2.5rem;
+			backdrop-filter: blur(1px) brightness(99%);
+		}
+	}
+
+	.date {
+		margin-bottom: 0.5em;
+		color: white;
+		position: absolute;
+		right: 1rem;
+		font-size: 1.5rem;
+		padding: 1rem;
+		bottom: 0;
+		backdrop-filter: blur(1px) brightness(99%);
+	}
+	.last-updated-on {
+		font-style: italic;
+	}
+
+	.back-to-top {
+		/* position: absolute; */
+		/* bottom: 0; */
+		width: calc(100% - 4rem);
+		padding-bottom: 2rem;
+		text-align: center;
+		a {
+			color: var(--text);
+		}
+	}
+</style>

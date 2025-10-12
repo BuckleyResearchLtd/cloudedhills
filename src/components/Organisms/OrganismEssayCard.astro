@@ -1,26 +1,39 @@
 ---
-import OrganismContentType from "./OrganismContentType.astro";
+import { deserializeActionResult } from "astro:actions";
+import AtomContentType from "../Atoms/AtomContentType.astro";
+const { id, title, description, heroImage, colour } = Astro.props;
+const img = heroImage.src;
 ---
-
+<a href={"essays/"+id}>
 <div class="content-card card-rosewater">
-  <div class="h-container">
-    <img class="background-image" src="/src/assets/test-image.jpg" alt="Test image" />
-    <OrganismContentType essay/>
-    <h3 class="card-header serif"> Pessimism </h3>
-    <h3 class="card-header serif"> and Palestine </h3>
-    <div class="card-paragraph">
-      On radical hope, and how pessimism permits genocide.
-    </div>
+  <div class="h-container background-image">
+		<AtomContentType essay/>
+    <h3 class="card-header serif"> { title }</h3>
+		<div class="card-paragraph-container">
+			<div class="card-paragraph">
+				{ description }
+		</div>
+		</div>
   </div>
 </div>
-
-<style>
+</a>
+<style define:vars={{ colour, bg: `url('${img}')` }}>
 
 .card-paragraph {
-	color: white;
+	/* position: absolute;
+	top: 60%;
+	left: 0; */
+	margin: 0 2rem;
 	line-height: 1.5rem;
-	height: 100%;
-	margin-top: 5rem;
+	color: white;
+}
+
+.card-paragraph-container {
+	position: absolute;
+	top: 60%;
+	left: 0;
+	mask-image: radial-gradient(circle, black 60%, transparent 100%)
+	backdrop-filter: blur(1px) brightness(100%);
 }
 
 .h-container {
@@ -28,26 +41,46 @@ import OrganismContentType from "./OrganismContentType.astro";
 }
 
 .content-card {
+	color: var(--colour);
 	height: 100%;
 	flex: 1;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
+	&:hover {
+      transform: scale(1.02);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+	}
 }
 
 .card-header {
-	color: var(--base);
 	font-size: x-large;
 	font-weight: 600;
+	max-width: 10rem;
+	position: absolute;
+	top: 25%;
+	/* background-color: rgba(0,0,0,0.3);
+	padding: 0.5rem; */
+	backdrop-filter: blur(1px) brightness(99%);
 }
 
 .background-image {
+	/* object-fit: cover;
+	width: 100%;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -1;
-	border-radius: 0 0 0 0;
-
+	border-radius: 0 0 0 0; */
+	background-image:
+		linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),
+		var(--bg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
 }
 
 .card-rosewater {

@@ -1,11 +1,11 @@
 ---
-import OrganismContentType from "../Organisms/OrganismContentType.astro";
+import AtomContentType from "../Atoms/AtomContentType.astro";
 const { title, description, class: className } = Astro.props;
 ---
 
 <div class:list={["card-row", className ]}>
   <div class="thumbnail-container">
-    <OrganismContentType essay small/>
+    <AtomContentType essay small/>
   <img class="thumbnail" src="/src/assets/test-image.jpg"/>
   </div>
   <div class="card-text">

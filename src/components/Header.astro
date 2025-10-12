@@ -1,20 +1,37 @@
 ---
-import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+const { hideTitle } = Astro.props;
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/">
+		<div class="title-logo-container">
+				<img class="logo" src="/clouded-hills.svg" />
+				{!hideTitle && <h2 class="serif">{SITE_TITLE}</h2>}
+			</div>
+		</a>
 		<div class="internal-links">
 			<HeaderLink class="link-item" href="/">home</HeaderLink>
-			<HeaderLink class="link-item" href="/essays">essays</HeaderLink>
-			<HeaderLink class="link-item" href="/thoughts">thoughts</HeaderLink>
-			<HeaderLink class="link-item" href="/about">about</HeaderLink>
+			<HeaderLink class="link-item rosewater" href="/essays">essays</HeaderLink>
+			<!-- <HeaderLink class="link-item" href="/thoughts">thoughts</HeaderLink> -->
+			<!-- <HeaderLink class="link-item" href="/about">about</HeaderLink> -->
 		</div>
 	</nav>
 </header>
 <style>
+	.title-logo-container {
+		display: flex;
+		gap: 1rem;
+		margin-left: 0.4rem;
+	}
+
+	.logo {
+		width: 4rem;
+		height: 4rem;
+	}
+
 	header {
 		margin: 0;
 		padding: 0 1em;
@@ -24,6 +41,7 @@ import HeaderLink from './HeaderLink.astro';
 	h2 {
 		margin: 0.5em 0.1em;
 		font-size: 1.5em;
+		color: var(--teal);
 	}
 
 	h2 a,
@@ -35,24 +53,32 @@ import HeaderLink from './HeaderLink.astro';
 		flex-direction: column;
 		align-items: left;
 		justify-content: space-between;
-		padding: 0.5em 2em;
+		padding: 0.5em 1em;
 		padding-bottom: 0;
 	}
 	.link-item {
-		color: var(--text);
+		/* color: var(--text); */
 		padding: 0.25em 0.1em;
 		margin-right: 2.5em;
 		padding-bottom: 0;
 		border-bottom: 0.25em solid transparent;
 		text-decoration: none;
 		font-size: 0.7em;
+		color: var(--rosewater);
 	}
 	.link-item.active {
 		text-decoration: none;
-		border-bottom-color: var(--text);
+		border-bottom-color: var(--rosewater);
+	}
+
+	.rosewater {
 	}
 
 	.internal-links {
 		display: flex;
+		margin-left: 1rem;
+	}
+	a {
+		text-decoration: none;
 	}
 </style>
