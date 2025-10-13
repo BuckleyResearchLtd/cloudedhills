@@ -53,11 +53,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	}
 
 	main {
+		width: calc(100% - 2rem);
+		padding: 1rem 1rem;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	@media (min-width: 48em) main {
 		width: calc(100% - 8rem);
 		padding: 1rem 4rem;
 		display: flex;
 		flex-direction: column;
 	}
+	
 	.hero-image {
 		width: 100%;
 		display: flex;
@@ -98,6 +106,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	}
 
 	.date {
+		margin-bottom: 0.5em;
+		color: white;
+		position: absolute;
+		right: 1rem;
+		font-size: 1.5rem;
+		padding: 1rem;
+		top: 0;
+		backdrop-filter: blur(1px) brightness(99%);
+	}
+	
+	@media (min-width: 48em) .date {
 		margin-bottom: 0.5em;
 		color: white;
 		position: absolute;

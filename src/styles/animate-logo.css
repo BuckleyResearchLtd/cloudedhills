@@ -1,0 +1,69 @@
+.ran-away {
+  position: absolute;
+  top: 4rem;
+  left: calc(4rem + 60vw);
+  width: 10rem;
+  height: 10rem;
+}
+
+.ran-away-2 {
+  position: absolute;
+  top: 4rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.run-away {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  width: 10rem;
+  height: 10rem;
+  animation: growMove 2s forwards;
+}
+
+.come-back {
+  transition: left 2s;
+  will-change: left;
+  z-index: 5;
+}
+
+.come-back-2 {
+  transition: left 2s;
+  will-change: left;
+  z-index: 5;
+}
+
+.come-back-3 {
+  transform: translateX(calc(-100% - 100px));
+  animation: slide-left-in 6s forwards;
+}
+.run-away-3 {
+  left: 0;
+  transition: left 0.2s;
+}
+
+@keyframes slide-left-in {
+  40% {
+    transform: translate(-100%);
+  }
+  60% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes growMove {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  60% {
+    transform: scale(1.1) translateX(0); /* Grow in place */
+  }
+  100% {
+    transform: scale(1.1) translateX(calc(60vw)); /* Move to end (adjust for size) */
+  }
+}
+

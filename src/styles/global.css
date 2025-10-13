@@ -71,8 +71,10 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: "Noto Serif", serif;
+  font-weight: 500;
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: rgb(var(--text));
 	line-height: 1.2;
 }
 h1 {
@@ -123,7 +125,7 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: var(--overlay0);
 	border-radius: 2px;
 }
 pre {
@@ -134,14 +136,14 @@ pre > code {
 	all: unset;
 }
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
+	border-left: 4px solid var(--rosewater);
+	padding: 0 0 0 1rem;
 	margin: 0px;
-	font-size: 1.333em;
+	font-size: 1.1rem;
 }
 hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	/* border: none; */
+	border-top: 1px solid var(--overlay0));
 }
 @media (max-width: 720px) {
 	body {
@@ -150,6 +152,11 @@ hr {
 	main {
 		padding: 1em;
 	}
+}
+figcaption {
+	font-size: 1rem;
+	color: var(--subtext0);
+	text-align: center;
 }
 
 .sr-only {

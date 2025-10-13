@@ -9,7 +9,7 @@ import OrganismAboutCard from "../components/Organisms/OrganismAboutCard.astro";
 import OrganismEssayCard2 from "../components/Organisms/OrganismEssayCard2.astro";
 import Header from "../components/Header.astro";
 import MoleculeSquareCard from "../components/Molecules/MoleculeSquareCard.astro";
-
+import "../styles/animate-logo.css";
 const post = await getEntry("essays", "pessimism-and-palestine");
 ---
 
@@ -22,13 +22,15 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 		<Header hideTitle />
 		<main class="main">
 			<div class="outer-container">
-					<img id="logo" class="logo" src="/clouded-hills.svg" />
+				<img id="logo" class="logo" src="/clouded-hills.svg" />
 				<div class="container">
 					<div class="header-container">
 						<div class="header-flex">
 							<h1 class="serif">Clouded Hills</h1>
-							<h2 class="header">A place for essays, musings and</h2>
-							<h2 class="header">notes on science, politics and life.</h2>
+							<h2 class="header">
+								A place for essays, musings and <br class="not-mobile">notes on science, politics and
+								life.
+							</h2>
 						</div>
 						<div class="card-container">
 							<MoleculeSquareCard name="Essays" class="rosewater" />
@@ -49,8 +51,7 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 				</div>
 			</div>
 		</main>
-	</body>
-	<script>
+	</body><script>
 		const logo = document.getElementById("logo");
 		logo?.addEventListener("mouseover", (el) => {
 			if (logo.classList.contains("come-back-3")) {
@@ -61,7 +62,7 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 						logo.classList = "logo come-back-3";
 						logo.style.display = "block";
 						logo.style.removeProperty("left");
-					}, 5000)
+					}, 5000);
 				}, 200);
 				return;
 			}
@@ -73,17 +74,17 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 			} else if (logo.classList.contains("logo")) {
 				// logo.classList.remove("logo");
 				// logo.classList.remove('run-away');
-				logo.classList = 'ran-away';
-				const target = document.getElementById('content-container');
+				logo.classList = "ran-away";
+				const target = document.getElementById("content-container");
 				const rect = target?.getBoundingClientRect();
 				logo.style.left = `${rect.left + window.scrollX - 75}px`;
-				logo.classList.add('come-back');
+				logo.classList.add("come-back");
 			} else if (logo.classList.contains("come-back")) {
 				logo.style.left = `${window.innerWidth + 100}px`;
-				logo.classList = 'ran-away-2';		
+				logo.classList = "ran-away-2";
 				setTimeout(() => {
-				logo.style.left = `${window.innerWidth - 75}px`;
-				logo.classList.add('come-back-2');
+					logo.style.left = `${window.innerWidth - 75}px`;
+					logo.classList.add("come-back-2");
 				}, 100);
 			} else if (logo.classList.contains("come-back-2")) {
 				logo.style.display = "none";
@@ -94,89 +95,31 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 				}, 5000);
 			}
 		});
-			
 	</script>
 	<style>
 		.logo-container {
 			width: 100%;
 		}
-		
+
+		.not-mobile {
+			display: none;
+			@media (min-width: 48em) {
+				display: block;
+			}
+				
+			}
+
 		.logo {
 			position: absolute;
-			top: 4rem;
-			left: 4rem;
+			top: 2rem;
+			left: 2rem;
 			width: 10rem;
 			height: 10rem;
 			cursor: pointer;
 			z-index: 5;
-		}
-
-		.ran-away {
-			position: absolute;
-			top: 4rem;
-			left: calc(4rem + 60vw);
-			width: 10rem;
-			height: 10rem;
-		}
-		
-		.ran-away-2 {
-			position: absolute;
-			top: 4rem;
-			width: 10rem;
-			height: 10rem;
-		}
-
-		.run-away {
-			position: absolute;
-			top: 4rem;
-			left: 4rem;
-			width: 10rem;
-			height: 10rem;
-			animation: growMove 2s forwards;
-		}
-
-		.come-back {
-			transition: left 2s;
-			will-change: left;
-			z-index: 5;
-		}
-
-		.come-back-2 {
-			transition: left 2s;
-			will-change: left;
-			z-index: 5;
-		}
-
-		.come-back-3 {
-			transform: translateX(calc(-100% - 100px));
-			animation: slide-left-in 6s forwards;
-		}
-		.run-away-3 {
-			left: 0;
-			transition: left 0.2s;
-		}
-
-		@keyframes slide-left-in {
-			40% {
-				transform: translate(-100%);
-			}
-			60% {
-				transform: translate(-100%);
-			}
-			100% {
-				transform: translateX(0);
-			}
-		}
-
-		@keyframes growMove {
-			0% {
-				transform: scale(1) translateX(0);
-			}
-			60% {
-				transform: scale(1.1) translateX(0); /* Grow in place */
-			}
-			100% {
-				transform: scale(1.1) translateX(calc(60vw)); /* Move to end (adjust for size) */
+			@media (min-width: 48em) {
+				top: 4rem;
+				left: 4rem;
 			}
 		}
 
@@ -200,28 +143,41 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 			position: relative;
 			width: 100%;
 			height: 100%;
-			/* padding-top: 5rem; */
-			/* padding-bottom: 5rem; */
 			gap: 2rem;
 			margin: auto;
+			flex-direction: column;
+			@media (min-width: 48em) {
+				flex-direction: row;
+			}
 		}
 
 		.header-container {
-			/* background-color: var(--mantle); */
-			/* padding: 0rem 2rem; */
-			margin: 0 4rem;
 			margin-top: 8rem;
 			display: flex;
 			flex-direction: column;
+			@media (min-width: 48em) {
+				margin: 0 4rem;
+				margin-top: 8rem;
+			}
 		}
+
 		.header-flex {
 			margin: auto 0;
+			margin-right: 1rem;
+			@media (min-width: 48em) {
+				margin: auto 0;
+			}
 		}
+
+	
 		.card-container {
 			display: grid;
 			grid-template-rows: 1fr;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-			align-items: right;
+			/* align-items: right !important; */
+			justify-content: end;
+			justify-items: center;
+			width: 100%;
 		}
 
 		.card-paragraph {
@@ -232,11 +188,16 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 		}
 
 		.content-container {
-			height: 100%;
-			width: 100%;
-			max-width: 22rem;
 			z-index: 10;
-			/* aspect-ratio: 10 / 16; */
+			aspect-ratio: 10 / 16;
+			padding: 1rem;
+			@media (min-width: 48em) {
+				height: 100%;
+				width: 100%;
+				max-width: 22rem;
+				aspect-ratio: unset;
+				padding: unset;
+			}
 		}
 
 		h1 {
@@ -246,11 +207,14 @@ const post = await getEntry("essays", "pessimism-and-palestine");
 		}
 
 		h2 {
-			font-size: 2rem;
+			font-size: 1.3rem;
 			font-weight: 200;
 			color: var(--rosewater);
 			margin-left: 1rem;
 			text-align: right;
+			@media (min-width: 48em) {
+				font-size: 2rem;
+			}
 		}
 	</style>
 </html>
