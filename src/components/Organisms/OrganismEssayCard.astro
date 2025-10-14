@@ -4,7 +4,7 @@ import AtomContentType from "../Atoms/AtomContentType.astro";
 const { id, title, description, heroImage, colour } = Astro.props;
 const img = heroImage.src;
 ---
-<a href={"essays/"+id}>
+<a href={"/essays/"+id}>
 <div class="content-card card-rosewater">
   <div class="h-container background-image">
 		<AtomContentType essay/>
