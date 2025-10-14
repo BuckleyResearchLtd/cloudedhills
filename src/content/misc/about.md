@@ -1,7 +1,7 @@
 ---
 title: about
 ---
-This about section is too long. I will cut it down. In the meantime, if you want to contact me, the best way is by [email](mailto:joe@buckleyresearch.com).
+This about section is too long. I will cut it down. In the meantime, if you want to contact me, the best way is by [email](mailto:joe@buckleyresearch.com). If you like my work and want to support me, don't. [Donate to Wikipedia instead](https://donate.wikimedia.org/w/index.php).
 
 ## Clouded Hills
 Welcome to clouded hills, my place on the internet.
