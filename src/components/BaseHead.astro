@@ -9,12 +9,14 @@ import { SITE_TITLE } from '../consts';
 interface Props {
 	title: string;
 	description: string;
-	image?: ImageMetadata;
+	image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+let { title, description, image } = Astro.props;
+
+image  = image ?? FallbackImage.src;
 ---
 
 <!-- Global Metadata -->
@@ -36,11 +38,11 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
-<meta property="og:image" content={image.src}>
+<meta property="og:image" content={image}>
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
-<meta name="twitter:image" content={image.src}>
-<meta name="twitter:card" content={image.src}>
+<meta name="twitter:image" content={image}>
+<meta name="twitter:card" content={image}>
 
 <!-- font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
