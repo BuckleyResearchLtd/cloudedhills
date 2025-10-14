@@ -10,7 +10,7 @@ I often see people use statements about entropy as a metaphor for life, paraphra
 
  > entropy always increases
 
-followed by some philosophy about embracing disorder or chaos. There's times where they can be well written, but fundamentally I have a problem with them. They are wrong. And in being wrong, they often hide a much better metaphor for life.
+followed by some philosophy about embracing disorder or chaos. There's times where these discussions can be well written, but fundamentally I have a problem with them. They are wrong. And in being wrong, they often hide a much better metaphor for life.
 
 Entropy is a weird thing. It's a useful concept for everyday life, but we only learn about it in chemistry. As such, it's badly understood. For me, it took doing a masters in chemistry to start to understand entropy.
 
@@ -24,10 +24,9 @@ Which is a bad definition. Outside of medical diagnoses, disorder isn't really a
 
  > Entropy is a measure of chaos.
 
-This has two problems. First, chaos means something very specific in science and it's not this (link chaos theory). But more importantly, chaos is a bit vague. If I asked you, what was more chaotic, all your clothes being in a drawer, and then being spread around your house, you'd say the latter. That's good. That's the higher entropy state
+This has two problems. First, chaos means something very specific in science, and it's not this. But more importantly, chaos is a bit vague. If I asked you, what was more chaotic, all your clothes being in a drawer, and then being spread around your house, you'd say the latter. That's good. That's the higher entropy state
 
 But now imagine two beaches. One has a nice even layer of sand, completely flat and uniform. The other has one massive pile of sand in the corner, and the rest is empty. Which is more chaotic?
-
 ![a tale of two beaches.](../../assets/beaches.webp)
 
 If you said the second one, yeah, I'd agree with you. But that one is the lower entropy state. So chaos kind of breaks down. In many places we're used to the higher entropy state. It seems less chaotic. But this starts to lead us to a better definition.

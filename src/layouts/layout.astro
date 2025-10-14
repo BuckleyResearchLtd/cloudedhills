@@ -11,7 +11,7 @@ const { showTitle } = Astro.props;
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
-	<body>
+<body>
 		<Header showTitle={showTitle} />
 	  <main>
 			<slot/>
@@ -19,3 +19,8 @@ const { showTitle } = Astro.props;
 		<Footer />
 	</body>
 </html>
+<style>
+body {
+	display: flex;
+	flex-direction: column;
+}

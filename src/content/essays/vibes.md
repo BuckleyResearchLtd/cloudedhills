@@ -37,9 +37,7 @@ After an hour, I gave up. Deleted everything and decided to start again. I'd hea
 This time it built something that worked. It was a hello world page, but no worries. I continued to prompt. Soon it was pulling from API's and ChartJS was up and running. It was ugly though. Really ugly. But that makes sense, I’d kind of expect inconsistent CSS. No worries, Tailwind was built just for this. But first, let’s tidy up what we’ve got and commit.
 
 > move connection strings and API keys to a dotenv file and use dotenv, now setup git, commit and push
-
 ...
-
 > Wait, did you just fucking push all my API keys
 
 After fixing that problem I got it to setup Tailwind and make things nice. This took 90 minutes. 90 fucking minutes. Turns out, it installed Tailwind V4 but followed the setup for V3. I didn’t realise it at first, because when I asked it to do something it would apply the tailwind class, and when that didn’t work it would “fix it” with inline styles. I was trying to get it to do some complex positioning, so it got away with it longer than you would expect.
@@ -48,7 +46,7 @@ At this point I decided the experiment had failed. I wasn’t going to have much
 
 This is where things got interesting. And scary. Everything started working. It’d taken me 4 hours to get to this point. By the 5th hour, the app was done. Roll-your-own auth, containerised with a db, backend and everything. It took some prompting to get it to do things the right way, but it got there. It looked as good as anything I’d be bothered to make. And it works well enough. The code is a mess, but that’s fine. I don’t need to touch it.
 
-Insert screenshot here
+[Here’s the final app, I’d be relatively happy with it if I made this myself.](../../assets/vibes-screenshot.webp)
 
 ## Learnings
 
@@ -79,3 +77,6 @@ Maybe this won’t happen over the next few years, but it will over the next dec
 And that’s why I need a new career. 
 
 If you’re a software developer, you have to take this seriously. 
+---
+## Addendum
+Since first publication, I ended up taking the majority of the app down, and moving the dashboard over to obsidian, using the dataviewer plugin. I still use the API, but completely rewrote the front end. 

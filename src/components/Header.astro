@@ -20,7 +20,7 @@ const { hideTitle } = Astro.props;
 			<HeaderLink class="link-item" href="/">home</HeaderLink>
 			<HeaderLink class="link-item rosewater" href="/essays">essays</HeaderLink>
 			<!-- <HeaderLink class="link-item" href="/thoughts">thoughts</HeaderLink> -->
-			<!-- <HeaderLink class="link-item" href="/about">about</HeaderLink> -->
+			<HeaderLink class="link-item right" href="/about">about</HeaderLink>
 		</div>
 	</nav>
 </header>
@@ -34,6 +34,11 @@ const { hideTitle } = Astro.props;
 	.logo {
 		width: 4rem;
 		height: 4rem;
+	}
+
+	.right {
+		margin-right: 10rem;
+		margin-left: auto;
 	}
 
 	header {
