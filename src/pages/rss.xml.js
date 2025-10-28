@@ -10,11 +10,11 @@ export async function GET(context) {
     site: context.site,
     customData: `
     <image>
-      <url>https://your-domain.com/favicon.ico</url>
-      <title>Your Blog Title</title>
-      <link>https://your-domain.com/</link>
-      <width>32</width>
-      <height>32</height>
+    <url>https://www.cloudedhills.comm/favicon.ico</url>
+    <title>Clouded Hills</title>
+    <link>https://www.cloudedhills.com/</link>
+    <width>32</width>
+    <height>32</height>
     </image>
     `,
     items: posts.map((post) => ({
@@ -27,5 +27,8 @@ export async function GET(context) {
       medium="image"
       url="${context.site + post.data.heroImage.src}" />`,
     })),
+    xmlns: {
+      media: "http://search.yahoo.com/mrss/"
+    }
   });
 }
