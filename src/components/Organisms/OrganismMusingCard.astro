@@ -1,0 +1,109 @@
+---
+import { deserializeActionResult } from "astro:actions";
+import AtomContentType from "../Atoms/AtomContentType.astro";
+const { id, title, description, heroImage, colour } = Astro.props;
+const img = heroImage.src;
+---
+<a href={"/musings/"+id}>
+<div class="content-card card-rosewater">
+  <div class="h-container background-image">
+		<AtomContentType musing/>
+    <h3 class="card-header serif"> { title }</h3>
+		<div class="card-paragraph-container">
+			<div class="card-paragraph">
+				{ description }
+		</div>
+		</div>
+  </div>
+</div>
+</a>
+<style define:vars={{ colour, bg: `url('${img}')` }}>
+
+.card-paragraph {
+	/* position: absolute;
+	top: 60%;
+	left: 0; */
+	margin: 0 2rem;
+	line-height: 1.5rem;
+	color: white;
+}
+
+.card-paragraph-container {
+	position: absolute;
+	top: 60%;
+	left: 0;
+	mask-image: radial-gradient(circle, black 60%, transparent 100%)
+	backdrop-filter: blur(1px) brightness(100%);
+}
+
+.h-container {
+	padding: 4rem 2rem;
+}
+
+.content-card {
+	color: var(--colour);
+	height: 100%;
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	&:hover {
+      transform: scale(1.02);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+	}
+}
+
+.card-header {
+	font-size: x-large;
+	font-weight: 600;
+	max-width: 10rem;
+	position: absolute;
+	top: 25%;
+	/* background-color: rgba(0,0,0,0.3);
+	padding: 0.5rem; */
+	backdrop-filter: blur(1px) brightness(99%);
+}
+
+.background-image {
+	/* object-fit: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 0 0 0 0; */
+	background-image:
+		linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),
+		var(--bg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+}
+
+.card-rosewater {
+	background: var(--rosewater);
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.card-yellow { 
+	background: var(--yellow);
+}
+
+h1 {
+	color: var(--teal);
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 200;
+	width: 70%;
+	color: var(--rosewater);
+}
+</style>

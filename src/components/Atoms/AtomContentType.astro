@@ -1,15 +1,18 @@
 ---
-const { essay, note, small } = Astro.props;
-console.log("essay", essay);
-const contentType = essay ? "essay" : "note";
+const { essay, note, musing, small } = Astro.props;
+let contentType = "note";
+if (essay) contentType = "essay";
+if (musing) contentType = "musing";
 ---
 <div class:list={[
 	{ 
 		"content-type": !small,
 		"content-type-small": small,
 		"essay": essay, 
-		"note": note }]}>
-  <p> { contentType }</p>
+    "note": note,
+    "musing": musing,
+    }]}>
+  <p> { contentType } </p>
 </div>
 
 <style>
@@ -55,6 +58,10 @@ const contentType = essay ? "essay" : "note";
 
 .essay {
 	background: var(--rosewater);
+}
+
+.musing {
+  background: var(--green);
 }
 
 .note {
