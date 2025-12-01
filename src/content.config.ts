@@ -30,6 +30,7 @@ const musings = defineCollection({
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
 			colour: z.string().optional(),
+			noProof: z.boolean().optional(),
 		}),
 });
 const misc = defineCollection({

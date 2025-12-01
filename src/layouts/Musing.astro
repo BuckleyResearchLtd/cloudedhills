@@ -8,7 +8,7 @@ import Header from "../components/Header.astro";
 import { LinkPreview } from "astro-static-link-preview";
 
 type Props = CollectionEntry<"Musing">["data"];
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, noProof } = Astro.props;
 
 ---
 
@@ -36,10 +36,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					</div>
 				</div>
           <div class="musing-warning-box">
-            This is a musing. It is gloriously incomplete. The author retains the right to disavow any opinion shared here.
+						This is a musing. It is gloriously incomplete. The author retains the right to disavow any opinion shared here.
             <br/>
             Consume at your own peril.
-            </p>
+						{ noProof && <span>This one hasn't even been proof read.</span> } 
+					</p>
           </div>
 				<div class="prose">
 					<slot />
