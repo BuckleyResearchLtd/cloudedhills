@@ -13,4 +13,4 @@ test
 
 ## Here is more info
 
-![](../../assets/Pasted image 20260210174709.png)
+![](../../assets/Pasted-image-20260210174709.png)
