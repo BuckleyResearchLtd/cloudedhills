@@ -1,6 +1,11 @@
 ---
 pb-type: essays
 pb-publish: true
+title: "41124"
+description: So this is how democracy dies...
+heroImage: ../../assets/41124.jpg
+pubDate: 6 Nov 24
+colour: white
 ---
 	
 test
