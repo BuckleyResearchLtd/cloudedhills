@@ -3,7 +3,7 @@ pb-type: notes
 pb-publish: true
 title: On Vibes (again)
 description: I can't stop thinking about AI
-heroImage: None
+heroImage:
 pubDate: 10 Feb 26
 colour: white
 ---
