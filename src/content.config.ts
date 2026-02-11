@@ -11,9 +11,9 @@ const essays = defineCollection({
 			description: z.string(),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
-			colour: z.string().optional(),
+			updatedDate: z.coerce.date().optional().nullable(),
+			heroImage: image().optional().nullable(),
+			colour: z.string().optional().nullable(),
 		}),
 });
 
@@ -27,10 +27,10 @@ const musings = defineCollection({
 			description: z.string(),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
-			colour: z.string().optional(),
-			noProof: z.boolean().optional(),
+			updatedDate: z.coerce.date().optional().nullable(),
+			heroImage: image().optional().nullable(),
+			colour: z.string().optional().nullable(),
+			noProof: z.boolean().optional().nullable(),
 		}),
 });
 
@@ -45,10 +45,10 @@ const updates = defineCollection({
 			description: z.string(),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
-			colour: z.string().optional(),
-			noProof: z.boolean().optional(),
+			updatedDate: z.coerce.date().optional().nullable(),
+			heroImage: image().optional().nullable(),
+			colour: z.string().optional().nullable(),
+			noProof: z.boolean().optional().nullable(),
 		}),
 });
 
@@ -63,9 +63,9 @@ const notes = defineCollection({
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
-			colour: z.string().optional(),
-			noProof: z.boolean().optional(),
+			heroImage: image().optional().nullable(),
+			colour: z.string().optional().nullable(),
+			unfinished: z.boolean().optional().nullable(),
 		}),
 });
 
