@@ -1,0 +1,119 @@
+---
+import { deserializeActionResult } from "astro:actions";
+import AtomContentType from "../Atoms/AtomContentType.astro";
+const { id, title, description, heroImage, colour } = Astro.props;
+
+// Handle missing hero images with random colors
+const colors = ['var(--rosewater)', 'var(--teal)', 'var(--yellow)', 'var(--green)'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+const img = heroImage ? heroImage.src : null;
+const bgColor = heroImage ? null : randomColor;
+const hasImage = !!heroImage;
+---
+<a href={"/notes/"+id}>
+<div class="content-card" class:list={{ 'no-image': !hasImage }}>
+  <div class="h-container background-image" style={bgColor ? `background-color: ${bgColor}` : ''}>
+		<AtomContentType note/>
+    <h3 class="card-header serif"> { title }</h3>
+		<div class="card-paragraph-container">
+			<div class="card-paragraph">
+				{ description }
+		</div>
+		</div>
+  </div>
+</div>
+</a>
+<style define:vars={{ colour, bg: img ? `url('${img}')` : 'none' }}>
+
+.card-paragraph {
+	margin: 0 2rem;
+	line-height: 1.5rem;
+	color: white;
+}
+
+.card-paragraph-container {
+	position: absolute;
+	top: 60%;
+	left: 0;
+	mask-image: radial-gradient(circle, black 60%, transparent 100%)
+	backdrop-filter: blur(1px) brightness(100%);
+}
+
+.no-image .card-paragraph-container {
+	backdrop-filter: none;
+}
+
+.no-image .card-paragraph,
+.no-image .card-header {
+	color: white;
+}
+
+.h-container {
+	padding: 4rem 2rem;
+}
+
+.content-card {
+	color: var(--colour);
+	height: 100%;
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	&:hover {
+      transform: scale(1.02);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+	}
+}
+
+.card-header {
+	font-size: x-large;
+	font-weight: 600;
+	max-width: 10rem;
+	position: absolute;
+	top: 25%;
+	backdrop-filter: blur(1px) brightness(99%);
+}
+
+.no-image .card-header {
+	backdrop-filter: none;
+}
+
+.background-image {
+	background-image:
+		linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),
+		var(--bg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+}
+
+.no-image .background-image {
+	background-image: none;
+}
+
+.card-rosewater {
+	background: var(--rosewater);
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.card-yellow {
+	background: var(--yellow);
+}
+
+h1 {
+	color: var(--teal);
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 200;
+	width: 70%;
+	color: var(--rosewater);
+}
+</style>

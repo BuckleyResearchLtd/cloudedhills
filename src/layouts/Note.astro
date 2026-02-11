@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+import { LinkPreview } from "astro-static-link-preview";
+
+type Props = CollectionEntry<"notes">["data"];
+const { title, description, pubDate, updatedDate, heroImage, noProof } = Astro.props;
+
+// Random color selection for notes without hero images
+const colors = ['var(--rosewater)', 'var(--teal)', 'var(--yellow)', 'var(--green)'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} image={heroImage} />
+	</head>
+	<body>
+		<Header id="top"/>
+		<main>
+				<div class="hero-image">
+					{heroImage ? (
+						<Image src={heroImage} class="hero-image-img" alt="" />
+					) : (
+						<div class="hero-image-color" style={`background-color: ${randomColor}`}></div>
+					)}
+					<div class="date serif">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
+          </div>
+					<div class="title">
+						<h1 class="serif title-text">{title}</h1>
+					</div>
+				</div>
+          <div class="note-warning-box">
+            Notes are notes. You probably shouldn't be reading them. They are loose, unstructured collections of ideas. A note may one day become an essay or a musing, but for now, they are chaotic. They are very rarely proof read. I may disagree with everything written here. Proceed with caution, you have been warned.
+					</p>
+          </div>
+				<div class="prose">
+					<slot />
+				</div>
+			<div class="back-to-top">
+				<a href="#top"> Back to Top </a>
+			</div>
+		</main>
+	</body>
+</html>
+<style>
+	w-full {
+		padding: 0;
+		width: calc(100% - 4rem);
+		margin 0;
+	}
+
+	main {
+		width: calc(100% - 2rem);
+		padding: 1rem 1rem;
+		display: flex;
+		flex-direction: column;
+		@media (min-width: 48em) {
+			width: calc(100% - 8rem);
+			padding: 1rem 4rem;
+		}
+	}
+
+  .note-warning-box {
+    background: var(--teal);
+    padding: 2rem;
+    margin: 1rem 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+  }
+
+	.hero-image {
+		width: 100%;
+		display: flex;
+		height: 15rem;
+		position: relative;
+	}
+
+	.hero-image-img {
+		margin: 0 auto;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.hero-image-color {
+		width: 100%;
+		height: 100%;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+	}
+
+	.prose {
+		max-width: 50rem;
+		margin: auto;
+		padding: 1em;
+		color: var(--text);
+		font-size: 1.2rem;
+	}
+	.title {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+
+		h1 {
+			color: white;
+			font-size: 2.5rem;
+			backdrop-filter: blur(1px) brightness(99%);
+		}
+	}
+
+	.date {
+		margin-bottom: 0.5em;
+		color: white;
+		position: absolute;
+		right: 1rem;
+		font-size: 1.5rem;
+		padding: 1rem;
+		top: 0;
+		backdrop-filter: blur(1px) brightness(99%);
+		@media (min-width: 48em) {
+			top: unset;
+			bottom: 0;
+		}
+	}
+
+	.last-updated-on {
+		font-style: italic;
+	}
+
+	.back-to-top {
+		width: calc(100% - 4rem);
+		padding-bottom: 2rem;
+		text-align: center;
+		a {
+			color: var(--text);
+		}
+	}
+</style>

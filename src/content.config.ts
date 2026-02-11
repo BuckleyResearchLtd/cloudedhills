@@ -52,6 +52,23 @@ const updates = defineCollection({
 		}),
 });
 
+const notes = defineCollection({
+	// Load Markdown and MDX files in the `src/content/notes/` directory.
+	loader: glob({ base: './src/content/notes', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			// Transform string to Date object
+			pubDate: z.coerce.date(),
+			updatedDate: z.coerce.date().optional(),
+			heroImage: image().optional(),
+			colour: z.string().optional(),
+			noProof: z.boolean().optional(),
+		}),
+});
+
 const misc = defineCollection({
 	// Load Markdown and MDX files in the `src/content/essay/` directory.
 	loader: glob({ base: './src/content/misc', pattern: '**/*.{md,mdx}' }),
@@ -61,4 +78,4 @@ const misc = defineCollection({
 	})
 });
 
-export const collections = { essays, musings, updates, misc};
+export const collections = { essays, musings, updates, notes, misc};
