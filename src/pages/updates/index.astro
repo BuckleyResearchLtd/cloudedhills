@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Layout from '../../layouts/layout.astro';
+import OrganismUpdateCard from '../../components/Organisms/OrganismUpdateCard.astro';
+
+const posts = (await getCollection('updates')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout showTitle>
+	<div class="header">
+		<h2 class="serif"> Updates </h2>
+    <h4 class="serif"> Linear, timebased writing. The feed. </h4>
+	</div>
+	<div class="cardList">
+		{
+			posts.map((post) => (
+				<div>
+          <OrganismUpdateCard id={post.id} title={post.data.title} heroImage={post.data.heroImage} description={post.data.description} colour={post.data.colour} body={post.body}/>
+				</div>
+			))
+		}
+	</div>
+</Layout>
+<style>
+
+.cardList {
+	/* display: grid; */
+	/* grid-template-columns: 1fr; */
+	/* gap: 1rem; */
+	margin: 3rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+	/* grid-auto-rows: 25rem; */
+	padding-bottom: 3rem;
+}
+
+h4 {
+	font-weight: 300;
+	font-size: 1.3rem;
+	margin-top: 1rem;
+	@media (min-width: 48em) {
+		font-size: 2rem;
+		margin-top: 2rem;
+	}
+}
+
+.header {
+	margin: 1rem 1rem;
+	margin-top: 0rem;
+	color: var(--text);
+	@media (min-width: 48em) {
+		margin: 2rem 3rem;
+	}
+}
+</style>

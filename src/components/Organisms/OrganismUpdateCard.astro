@@ -1,0 +1,139 @@
+---
+import { deserializeActionResult } from "astro:actions";
+import AtomContentType from "../Atoms/AtomContentType.astro";
+const { id, title, description, heroImage, colour, data, body  } = Astro.props;
+
+const img = heroImage.src;
+
+const previewLines = body.split("\n").slice(0,4);
+---
+<a href={"/updates/"+id}>
+<div class="content-card card-rosewater">
+		<AtomContentType musing/>
+    <div class="hero-image-container">
+      <img class="hero-image" src={img} />
+    </div>  
+  <div class="title-and-preview">
+    <h3 class="card-header serif"> { title }</h3>
+	  <div class="card-paragraph-container">
+		  <div class="card-preview">
+        { previewLines.map(preview => ( 
+          <p class="card-paragraph">{preview}</p> 
+          ))
+        }
+		  </div>
+		</div>
+      <div class="read-more serif"> read more... </div>
+  </div>
+</div>
+</a>
+<style define:vars={{ colour, bg: `url('${img}')` }}>
+
+.title-and-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-image-container {
+  margin: auto 0;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.hero-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.read-more {
+  margin: auto auto;
+}
+
+.card-preview {
+  line-clamp: 3;
+  block-overflow: ellipsis;
+	margin: 0 2rem;
+	line-height: 1.5rem;
+	color: white;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* number of lines you want */
+}
+
+.content-card {
+	color: var(--colour);
+	height: 100%;
+	flex: 1;
+	overflow: hidden;
+  display: flex;
+	position: relative;
+	padding: 2rem;
+	z-index: 1;
+  gap: 2rem;
+	&:hover {
+      transform: scale(1.02);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+	}
+}
+
+.card-header {
+	font-weight: 600;
+	max-width: 10rem;
+  text-decoration: none;
+  margin: 4rem 2rem 2rem 2rem;
+	/* background-color: rgba(0,0,0,0.3);
+	padding: 0.5rem; */
+	backdrop-filter: blur(1px) brightness(99%);
+}
+
+.background-image {
+	/* object-fit: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 0 0 0 0; */
+	background-image:
+		linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),
+		var(--bg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+}
+
+.card-rosewater {
+	background: var(--rosewater);
+}
+
+.card-teal {
+	background: var(--teal);
+}
+
+.card-yellow { 
+	background: var(--yellow);
+}
+
+h1 {
+	color: var(--teal);
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 200;
+	width: 70%;
+	color: var(--rosewater);
+}
+
+a {
+  text-decoration: none;
+}
+</style>

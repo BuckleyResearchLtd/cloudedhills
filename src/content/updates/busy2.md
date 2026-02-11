@@ -1,10 +1,10 @@
 ---
 title: "Busy"
 heroImage: "../../assets/busy-2.jpg"
-description: ""
 pubDate: '01 Dec 2025'
 colour: "white"
 noProof: true
+description: ""
 ---
 
 I haven't written in a while. I've been busy.
