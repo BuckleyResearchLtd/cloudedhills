@@ -8,7 +8,7 @@ import Header from "../components/Header.astro";
 import { LinkPreview } from "astro-static-link-preview";
 
 type Props = CollectionEntry<"notes">["data"];
-const { title, description, pubDate, updatedDate, heroImage, noProof } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, unfinished } = Astro.props;
 
 // Random color selection for notes without hero images
 const colors = ['var(--rosewater)', 'var(--teal)', 'var(--yellow)', 'var(--green)'];
@@ -49,6 +49,8 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
 				<div class="prose">
 					<slot />
 				</div>
+      
+        { unfinished && <div class="unfinished"> Like the Sagrada Familia, this is a work in progress. One day, if I can find enough sandstone, it maybe become finished. </div> }
 			<div class="back-to-top">
 				<a href="#top"> Back to Top </a>
 			</div>
@@ -150,5 +152,17 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
 		a {
 			color: var(--text);
 		}
+    margin: auto;
 	}
+
+  .unfinished {
+    background: var(--red);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+    max-width: 50rem;
+  }
 </style>

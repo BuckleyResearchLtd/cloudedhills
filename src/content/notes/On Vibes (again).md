@@ -6,10 +6,11 @@ description: I can't stop thinking about AI
 heroImage:
 pubDate: 10 Feb 26
 colour: white
+unfinished: true
 ---
 I've been thinking about vibe coding again.
 
-I did an [[Vibes, or why I need a new career|experiment]] a few months back, where I tried to vibe code app using GitHub copilot. It was a terrible experience, but scarily impressive. 
+I did an experiment a few months back, where I tried to vibe code app using GitHub copilot. It was a terrible experience, but scarily impressive. 
 
 I will write elsewhere about my thoughts on the economic, social and political implications of LLMs, but for the purpose of this I want to stay in a dream world where we get free or subsidised access to these surfaces because reasons. Where LLMs are just going to get better, there is no bubble (there is definitely a bubble), and everything is fine. 
 
