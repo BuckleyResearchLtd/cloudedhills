@@ -12,7 +12,8 @@ const { title, description, pubDate, updatedDate, heroImage, unfinished } = Astr
 
 // Random color selection for notes without hero images
 const colors = ['var(--rosewater)', 'var(--teal)', 'var(--yellow)', 'var(--green)'];
-const randomColor = colors[Math.floor(Math.random() * colors.length)];
+let randomColor = colors[Math.floor(Math.random() * colors.length)];
+randomColor = heroImage ? 'var(--teal)' : randomColor; 
 ---
 
 <html lang="en">
@@ -42,9 +43,8 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
 						<h1 class="serif title-text">{title}</h1>
 					</div>
 				</div>
-          <div class="note-warning-box">
+        <div class="note-warning-box" style={`border: 0.25rem solid ${randomColor}`}>
             Notes are notes. You probably shouldn't be reading them. They are loose, unstructured collections of ideas. A note may one day become an essay or a musing, but for now, they are chaotic. They are very rarely proof read. I may disagree with everything written here. Proceed with caution, you have been warned.
-					</p>
           </div>
 				<div class="prose">
 					<slot />
@@ -76,12 +76,12 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
 	}
 
   .note-warning-box {
-    background: var(--teal);
     padding: 2rem;
+
     margin: 1rem 4rem;
     border-radius: 1rem;
     text-align: center;
-    color: white;
+    color: var(--text);
   }
 
 	.hero-image {
@@ -156,13 +156,13 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
 	}
 
   .unfinished {
-    background: var(--red);
+    border: 0.25rem solid var(--red);
     padding: 1rem 2rem;
     border-radius: 1rem;
     margin: auto;
     margin-bottom: 2rem;
     text-align: center;
-    color: white;
+    color: var(--text);
     max-width: 50rem;
   }
 </style>
