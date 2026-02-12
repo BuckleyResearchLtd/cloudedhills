@@ -6,7 +6,6 @@ description: I can't stop thinking about AI
 heroImage:
 pubDate: 10 Feb 26
 colour: white
-unfinished: true
 ---
 I've been thinking about vibe coding again.
 
