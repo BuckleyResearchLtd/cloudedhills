@@ -9,7 +9,7 @@ colour: white
 ---
 I've been thinking about vibe coding again.
 
-I did an [experiment](/src/content/essays/vibes.md) a few months back, where I tried to vibe code app using GitHub copilot. It was a terrible experience, but scarily impressive. 
+I did an [experiment](/essays/vibes) a few months back, where I tried to vibe code app using GitHub copilot. It was a terrible experience, but scarily impressive. 
 
 I will write elsewhere about my thoughts on the economic, social and political implications of LLMs, but for the purpose of this I want to stay in a dream world where we get free or subsidised access to these surfaces because reasons. Where LLMs are just going to get better, there is no bubble (there is definitely a bubble), and everything is fine. 
 
