@@ -52,6 +52,8 @@ So thus begins my 40 days. I've already spent all day today mentioning in every 
 
 All this being said, I may slightly break my abstinence to post links to these articles on Instagram or Reddit, because literally nobody reads them otherwise. Maybe I can automate this somehow. We'll see. 
 
+If you were interested, the cover photo is a picture of Wadi Rum desert I took when visiting in 2020. Honestly that place is so beautiful.
+
 
 [^1]: I don't know if I need to explain what lent is. I assume no, but I hesitated. Lent is a Christian (maybe Catholic?) tradition where you abstain from something for 40 days, from Ash Wednesday to Good Friday. Representing the time Jesus spent in the desert. It's basically a Christian Ramadan, or a time limited new year resolution.
 
