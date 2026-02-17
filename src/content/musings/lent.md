@@ -4,7 +4,7 @@ tags:
 pb-type: musings
 pb-publish: true
 title: Lent
-description:
+description: I'm quitting social media for lent.
 heroImage: "../../assets/20200125_125018.jpg"
 pubDate: 17 Feb 26
 colour: white
