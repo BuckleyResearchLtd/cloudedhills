@@ -5,7 +5,7 @@ pb-type: musings
 pb-publish: true
 title: Lent
 description:
-heroImage:
+heroImage: "../../assets/20200125_125018.jpg"
 pubDate: 17 Feb 26
 colour: white
 noProof: true
@@ -56,3 +56,5 @@ All this being said, I may slightly break my abstinence to post links to these a
 [^1]: I don't know if I need to explain what lent is. I assume no, but I hesitated. Lent is a Christian (maybe Catholic?) tradition where you abstain from something for 40 days, from Ash Wednesday to Good Friday. Representing the time Jesus spent in the desert. It's basically a Christian Ramadan, or a time limited new year resolution.
 
 [^2]: My phone keeps hyphenating braindead and that's really weird. Brain-dead. Weird.
+
+
