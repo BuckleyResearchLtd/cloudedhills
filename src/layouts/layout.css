@@ -1,0 +1,12 @@
+.container {
+    border: 1px solid var(--text);
+    margin: 3rem 5rem;
+    padding: 3rem; 
+    background: var(--mantle);
+    box-shadow: 0.5rem 0.5rem 0.5rem 0 var(--text);
+    position: relative;
+}
+
+main {
+  position: relative;
+}
