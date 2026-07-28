@@ -2,7 +2,7 @@
 import { deserializeActionResult } from "astro:actions";
 import AtomContentType from "../Atoms/AtomContentType.astro";
 const { id, title, description, heroImage, colour } = Astro.props;
-const img = heroImage.src;
+const bg = heroImage ? `url('${heroImage.src}')` : 'none';
 ---
 <a href={"/musings/"+id}>
 <div class="content-card card-rosewater">
@@ -17,7 +17,7 @@ const img = heroImage.src;
   </div>
 </div>
 </a>
-<style define:vars={{ colour, bg: `url('${img}')` }}>
+<style define:vars={{ colour, bg }}>
 
 .card-paragraph {
 	/* position: absolute;

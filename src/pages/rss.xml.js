@@ -30,6 +30,7 @@ export async function GET(context) {
     `,
     items: allPosts.map((post) => ({
       ...post.data,
+      description: post.data.description || undefined,
       link: `/${post.collection}/${post.id}/`,
       customData: post.data.heroImage ? `<media:content
       type="image/${post.data.heroImage.format == "jpg" ? "jpeg" : "png"}"

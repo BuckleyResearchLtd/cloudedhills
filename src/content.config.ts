@@ -1,6 +1,10 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+// An omitted or empty (`description:`) frontmatter value parses as null/undefined;
+// coerce it to an empty string so downstream consumers always get a string.
+const description = z.string().nullish().transform((v) => v ?? '');
+
 const essays = defineCollection({
 	// Load Markdown and MDX files in the `src/content/essay/` directory.
 	loader: glob({ base: './src/content/essays', pattern: '**/*.{md,mdx}' }),
@@ -8,7 +12,7 @@ const essays = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
-			description: z.string().optional().nullable(),
+			description,
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional().nullable(),
@@ -24,7 +28,7 @@ const musings = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
-			description: z.string().optional().nullable(),
+			description,
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional().nullable(),
@@ -42,7 +46,7 @@ const updates = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
-			description: z.string(),
+			description,
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional().nullable(),
@@ -59,7 +63,7 @@ const notes = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
-			description: z.string(),
+			description,
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
