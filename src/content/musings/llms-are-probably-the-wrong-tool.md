@@ -49,6 +49,7 @@ Maybe this will be useful to someone. If not, here's some predictions I want to 
 - There's going to be a AI crash, by this time next year.
 - There's going to be a massive recession, possible even a depression, by this time next year[^3].
 - By 2030, Dario Amodei will be in jail.
+
 I hope most of them are wrong.
 
 
