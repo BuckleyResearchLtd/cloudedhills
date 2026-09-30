@@ -5,11 +5,11 @@ pb-type: musings
 pb-publish: true
 title: LLMs are probably the wrong tool
 description: If all you have is an LLM, everything looks like a prompt.
-heroImage:
-  - - Pasted image 20260930094033.png
+heroImage: "../../assets/pasted-image-20260930094033.png"
 pubDate: 30 Sep 26
 colour: white
 ---
+
 
 Theres a famous misquote of [HL Mencken](https://en.wikiquote.org/wiki/H._L._Mencken#Quotes), which goes:
 >  For every complex problem there is an answer that is clear, simple, and wrong.
